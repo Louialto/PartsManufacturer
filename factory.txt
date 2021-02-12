@@ -1,0 +1,111 @@
+
+Without useless:
+
+?- solve_problem(2, S).
+S = [paint(a, green), shape(a)]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- solve_problem(2, S).
+S = [paint(b, blue), shape(b)]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
+
+?- solve_problem(7, S).
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (1.73s cpu, solution 1, maybe more)
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(b), drill(a), shape(b), shape(a)]
+Yes (1.73s cpu, solution 2, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (1.73s cpu, solution 3, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(b), drill(a), shape(b), shape(a)]
+Yes (1.75s cpu, solution 4, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(b), drill(a), shape(a), shape(b)]
+Yes (1.75s cpu, solution 5, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(b), drill(a), shape(b), shape(a)]
+Yes (1.75s cpu, solution 6, maybe more)
+S = [paint(b, blue), bolt(a, b), drill(b), paint(a, green), drill(a), shape(a), shape(b)]
+Yes (1.75s cpu, solution 7, maybe more)
+S = [paint(b, blue), bolt(a, b), drill(b), paint(a, green), drill(a), shape(b), shape(a)]
+Yes (1.75s cpu, solution 8, maybe more)
+S = [bolt(a, b), paint(b, blue), drill(b), paint(a, green), drill(a), shape(a), shape(b)]
+Yes (1.75s cpu, solution 9, maybe more)
+S = [bolt(a, b), paint(b, blue), drill(b), paint(a, green), drill(a), shape(b), shape(a)]
+Yes (1.75s cpu, solution 10, maybe more)
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(a), drill(b), shape(a), shape(b)]
+Yes (1.75s cpu, solution 11, maybe more)
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(a), drill(b), shape(b), shape(a)]
+Yes (1.75s cpu, solution 12, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(a), drill(b), shape(a), shape(b)]
+Yes (1.75s cpu, solution 13, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(a), drill(b), shape(b), shape(a)]
+Yes (1.75s cpu, solution 14, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(a), drill(b), shape(a), shape(b)]
+Yes (1.75s cpu, solution 15, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(a), drill(b), shape(b), shape(a)]
+Yes (1.75s cpu, solution 16, maybe more)
+S = [bolt(a, b), paint(a, green), drill(a), paint(b, blue), drill(b), shape(a), shape(b)]
+Yes (1.75s cpu, solution 17, maybe more)
+S = [bolt(a, b), paint(a, green), drill(a), paint(b, blue), drill(b), shape(b), shape(a)]
+Yes (1.75s cpu, solution 18, maybe more)
+No (3.64s cpu)
+
+There are so many different solutions for the seven step problem because the order of some actions are interchangeable.
+For example, it doesn't matter whether you do shape(a) before shape(b) and vice versa, as long as the shape(X) comes
+before drill(x). This same line of thinking applies to all actions for a given part. One part's actions can be interleaved
+with another part's actions, done completely before another part's actions, or some combination of the two.
+
+For useless:
+
+?- solve_problem(2, S).
+S = [paint(a, green), shape(a)]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- solve_problem(2, S).
+S = [paint(b, blue), shape(b)]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- solve_problem(7, S).
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (0.02s cpu, solution 1, maybe more)
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(b), drill(a), shape(b), shape(a)]
+Yes (0.03s cpu, solution 2, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (0.03s cpu, solution 3, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(b), drill(a), shape(b), shape(a)]
+Yes (0.03s cpu, solution 4, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(b), drill(a), shape(a), shape(b)]
+Yes (0.03s cpu, solution 5, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(b), drill(a), shape(b), shape(a)]
+Yes (0.03s cpu, solution 6, maybe more)
+S = [paint(b, blue), bolt(a, b), drill(b), paint(a, green), drill(a), shape(a), shape(b)]
+Yes (0.03s cpu, solution 7, maybe more)
+S = [paint(b, blue), bolt(a, b), drill(b), paint(a, green), drill(a), shape(b), shape(a)]
+Yes (0.03s cpu, solution 8, maybe more)
+S = [bolt(a, b), paint(b, blue), drill(b), paint(a, green), drill(a), shape(a), shape(b)]
+Yes (0.05s cpu, solution 9, maybe more)
+S = [bolt(a, b), paint(b, blue), drill(b), paint(a, green), drill(a), shape(b), shape(a)]
+Yes (0.05s cpu, solution 10, maybe more)
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(a), drill(b), shape(a), shape(b)]
+Yes (0.06s cpu, solution 11, maybe more)
+S = [paint(b, blue), bolt(a, b), paint(a, green), drill(a), drill(b), shape(b), shape(a)]
+Yes (0.06s cpu, solution 12, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(a), drill(b), shape(a), shape(b)]
+Yes (0.06s cpu, solution 13, maybe more)
+S = [bolt(a, b), paint(b, blue), paint(a, green), drill(a), drill(b), shape(b), shape(a)]
+Yes (0.06s cpu, solution 14, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(a), drill(b), shape(a), shape(b)]
+Yes (0.06s cpu, solution 15, maybe more)
+S = [bolt(a, b), paint(a, green), paint(b, blue), drill(a), drill(b), shape(b), shape(a)]
+Yes (0.06s cpu, solution 16, maybe more)
+S = [bolt(a, b), paint(a, green), drill(a), paint(b, blue), drill(b), shape(a), shape(b)]
+Yes (0.06s cpu, solution 17, maybe more)
+S = [bolt(a, b), paint(a, green), drill(a), paint(b, blue), drill(b), shape(b), shape(a)]
+Yes (0.06s cpu, solution 18, maybe more)
+No (0.06s cpu)
+
+Although it is hard to tell whether the 'useless' predicate had a great effect on the first two
+problems, it shows a drastic reduction in the time it takes to solve the problem: from 1.75s down to
+around 0.05s.
